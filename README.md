@@ -2,7 +2,11 @@
 
 ## Introduction
 
-Welcome to the AI Text Sentiment Analysis API documentation! This API allows you to perform sentiment analysis on textual content, providing detailed sentiment analysis reports and insights. Whether you're a developer building sentiment analysis tools or an organization looking to understand the sentiment of your text data, this API is designed to meet your needs.
+This API provides a powerful tool for analyzing the sentiment of text data. It helps you understand the overall sentiment (positive, negative, or neutral) and detailed sentiment breakdowns (joy, sadness, anger, etc.) within your text.
+
+## Authentication
+
+This API is currently stateless and does not require any form of authentication.
 
 ## Base URL
 
@@ -24,11 +28,23 @@ Analyzes the sentiment of the provided text, highlighting sentiments within sent
 
 ##### Request Body
 
+ Parameters 
+
+- text: `(required, string): The text for which you want to analyze sentiment. Maximum length is 2000 characters.`
+
 ```json
 {
   "text": "Text to be analyzed for sentiment."
 }
 ```
+
+## Status Codes
+
+- 200 OK: `Successful analysis.`
+- 400 Bad: `Request: Invalid request format or missing required parameters.`
+- 500 `Internal Server Error: Unexpected error during analysis.`
+
+
 
 #### Response
 
@@ -308,6 +324,12 @@ public class SentimentAnalysis {
 
 - **400 Bad Request**: If the request body is missing or malformed.
 - **500 Internal Server Error**: If an unexpected error occurs on the server.
+
+## Additional Notes
+
+You can send multiple requests to analyze different pieces of text.
+The API utilizes machine learning for sentiment analysis, and the results may not always be perfect. Consider incorporating the results alongside your own judgment for comprehensive analysis.
+The API is constantly under development, and new features may be added in the future.
 
 ## Conclusion
 
