@@ -1,13 +1,13 @@
-# Sentiment Analysis API Documentation
+# AI Text Sentiment Analysis
 
 ## Introduction
 
-Welcome to the Sentiment Analysis API documentation! This API allows you to analyze the sentiment of textual content, highlighting sentiments within sentences, calculating an overall sentiment score, and providing detailed sentiment counts. Whether you're a developer building a sentiment analysis tool or an organization looking to understand the sentiment of your content, this API is here to help.
+Welcome to the AI Text Sentiment Analysis API documentation! This API allows you to perform sentiment analysis on textual content, providing detailed sentiment analysis reports and insights. Whether you're a developer building sentiment analysis tools or an organization looking to understand the sentiment of your text data, this API is designed to meet your needs.
 
 ## Base URL
 
 ```
-https://sentiment-ai.com
+https://ai-text-sentiment-analysis.onrender.com
 ```
 
 ## Endpoints
@@ -71,7 +71,7 @@ Analyzes the sentiment of the provided text, highlighting sentiments within sent
 
 ```bash
 curl -X POST \
-  https://sentiment-ai.com/analyze_text \
+  https://ai-text-sentiment-analysis.onrender.com/analyze_text \
   -H 'Content-Type: application/json' \
   -d '{
     "text": "Text to be analyzed for sentiment."
@@ -108,7 +108,7 @@ curl -X POST \
 ```python
 import requests
 
-url = "https://sentiment-ai.com/analyze_text"
+url = "https://ai-text-sentiment-analysis.onrender.com/analyze_text"
 payload = {
   "text": "Text to be analyzed for sentiment."
 }
@@ -118,6 +118,101 @@ headers = {
 
 response = requests.post(url, json=payload, headers=headers)
 print(response.json())
+```
+
+#### Example Response
+
+```json
+{
+  "sentiment": "Positive",
+  "highlighted_text": {
+    "Sentence 1": "joy",
+    "Sentence 2": "sadness",
+    ...
+  },
+  "overall_sentiment_score": 75.0,
+  "sentiment_scores": {
+    "joy": 3,
+    "sadness": 2,
+    "fear": 0,
+    "neutral": 1,
+    "surprise": 0,
+    "anger": 0,
+    "shame": 0,
+    "disgust": 0
+  },
+  "sentiment_label": "Positive"
+}
+```
+
+### JavaScript (Node.js)
+
+```javascript
+const fetch = require('node-fetch');
+
+const url = 'https://ai-text-sentiment-analysis.onrender.com/analyze_text';
+const data = { text: 'Text to be analyzed for sentiment.' };
+
+fetch(url, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(data),
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error('Error:', error));
+```
+
+#### Example Response
+
+```json
+{
+  "sentiment": "Positive",
+  "highlighted_text": {
+    "Sentence 1": "joy",
+    "Sentence 2": "sadness",
+    ...
+  },
+  "overall_sentiment_score": 75.0,
+  "sentiment_scores": {
+    "joy": 3,
+    "sadness": 2,
+    "fear": 0,
+    "neutral": 1,
+    "surprise": 0,
+    "anger": 0,
+    "shame": 0,
+    "disgust": 0
+  },
+  "sentiment_label": "Positive"
+}
+```
+
+### PHP
+
+```php
+<?php
+
+$url = 'https://ai-text-sentiment-analysis.onrender.com/analyze_text';
+$data = array('text' => 'Text to be analyzed for sentiment.');
+
+$options = array(
+    'http' => array(
+        'header'  => "Content-Type: application/json\r\n",
+        'method'  => 'POST',
+        'content' => json_encode($data)
+    )
+);
+
+$context  = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+$response = json_decode($result);
+
+var_dump($response);
+
+?>
 ```
 
 #### Example Response
@@ -163,7 +258,7 @@ public class SentimentAnalysis {
     public static void main(String[] args) {
         try {
             HttpClient httpClient = HttpClientBuilder.create().build();
-            HttpPost request = new HttpPost("https://sentiment-ai.com/analyze_text");
+            HttpPost request = new HttpPost("https://ai-text-sentiment-analysis.onrender.com/analyze_text");
             StringEntity params = new StringEntity("{\"text\":\"Text to be analyzed for sentiment.\"}");
             request.addHeader("content-type", "application/json");
             request.setEntity(params);
@@ -216,4 +311,8 @@ public class SentimentAnalysis {
 
 ## Conclusion
 
-With the Sentiment Analysis API, you can effortlessly analyze the sentiment of textual content, gaining valuable insights into the emotions conveyed within the text. Integrate this API into your applications to enhance user experiences, optimize content strategies, and make data-driven decisions.
+With the AI Text Sentiment Analysis API, you can effortlessly analyze the sentiment of textual content, gaining valuable insights into the emotions conveyed within the text. Integrate this API into your applications to enhance user experiences, optimize content strategies, and make data-driven decisions.
+
+---
+
+Created by developer for developers.
