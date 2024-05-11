@@ -56,7 +56,7 @@ Analyzes the sentiment of the provided text, highlighting sentiments within sent
   "highlighted_text": {
     "Sentence 1": "joy",
     "Sentence 2": "sadness",
-    ...
+    
   },
   "overall_sentiment_score": 75.0,
   "sentiment_scores": {
@@ -102,7 +102,7 @@ curl -X POST \
   "highlighted_text": {
     "Sentence 1": "joy",
     "Sentence 2": "sadness",
-    ...
+    
   },
   "overall_sentiment_score": 75.0,
   "sentiment_scores": {
@@ -144,7 +144,7 @@ print(response.json())
   "highlighted_text": {
     "Sentence 1": "joy",
     "Sentence 2": "sadness",
-    ...
+    
   },
   "overall_sentiment_score": 75.0,
   "sentiment_scores": {
@@ -189,7 +189,7 @@ fetch(url, {
   "highlighted_text": {
     "Sentence 1": "joy",
     "Sentence 2": "sadness",
-    ...
+    
   },
   "overall_sentiment_score": 75.0,
   "sentiment_scores": {
@@ -239,7 +239,7 @@ var_dump($response);
   "highlighted_text": {
     "Sentence 1": "joy",
     "Sentence 2": "sadness",
-    ...
+    
   },
   "overall_sentiment_score": 75.0,
   "sentiment_scores": {
@@ -301,7 +301,7 @@ public class SentimentAnalysis {
   "highlighted_text": {
     "Sentence 1": "joy",
     "Sentence 2": "sadness",
-    ...
+    
   },
   "overall_sentiment_score": 75.0,
   "sentiment_scores": {
